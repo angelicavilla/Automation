@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1">
+
+    <!--LISTENERS-->
+    <listeners>
+        <listener class-name="gbsys.configurations.testng.CustomListener" />
+    </listeners>
+
+    <!-- GLOBAL PARAMETERS -->
+    <parameter name="browser" value="firefox"/>
+    <parameter name="app_admin_url" value="http://127.0.0.1:9000/admin/"/>
+    <parameter name="url_list_folder" value="http://127.0.0.1:9000/admin/filer/folder/"/>
+    <parameter name="username" value="automation"/>
+    <parameter name="password" value="Automation123$"/>
+
+    <!-- TESTS -->
+    <test name="Folders">
+
+        <!-- WHAT TO RUN -->
+        <groups>
+            <run>
+                <include name="Folders"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="gbsys.testcases.FolderSuite"></class>
+        </classes>
+    </test>
+</suite>
